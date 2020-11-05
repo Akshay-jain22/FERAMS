@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Deletion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='delete.css') }}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Student Data Deletion</h1>
+
+    <form action="" class="delete-box" id="delete">
+        <h2>Enter Credentials</h2>
+
+        <div class="textbox">
+            <input type="text" name="rollno" id="rollno" placeholder="Roll Number" required>
+        </div>
+        
+        <input type="submit" id="submit" class="btn" value="DELETE"/>
+    </form>
+
+     <script type=text/javascript>
+        $(function() {
+            $('#submit').bind('click', function() {
+                var rollno = $('input[name="rollno"]').val();
+
+                if(rollno==""){
+                    alert("Incomplete Credentials");
+                }
+                else{
+                    $.getJSON('{{ url_for("deleteStudent") }}', {
+                        rollno: rollno,
+                    }, function(data) {
+                        message = data.result;
+                        alert(message);
+                    });
+                    return false;
+                }               
+            });
+        });
+    </script>
+</body>
+</html>

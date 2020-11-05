@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form action="" class="register-box">
+        <h2>Enter Credentials</h2>
+
+        <div class="textbox">
+            <input type="text" name="Name" id="name" placeholder="Name" required>
+        </div>
+        <div class="textbox">
+            <input type="text" name="Rollno" id="rollno" placeholder="Roll Number" required>
+        </div>
+        <div class="textbox">
+            <input type="text" name="Branch" id="branch" placeholder="Branch" required>
+        </div>
+    
+        <input type="submit" class="btn" id="submit" value="REGISTER"/>
+
+    </form>
+    
+    <script type=text/javascript>
+        $(function() {
+            $('#submit').bind('click', function() {
+                var name = $('input[name="Name"]').val();
+                var rollno = $('input[name="Rollno"]').val();
+                var branch = $('input[name="Branch"]').val();
+
+                if(name=="" || rollno=="" || branch==""){
+                    alert("Incomplete Credentials");
+                }
+                else{
+                    $.getJSON('{{url_for("dataset")}}', {
+                        name: name,
+                        rollno: rollno,
+                        branch: branch,
+                    }, function(data) {
+                        message = data.result;
+                        alert(message);
+                    });
+                    return false;
+                }               
+            });
+        });
+    </script>
+</body>
+</html>

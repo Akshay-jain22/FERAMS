@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FERAMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <h1> Welcome to FERAMS</h1>
+    <form action="" method="post" id="home">
+        <div class="mail-box">
+            <h2>Select one Choice :</h2><br />
+
+            <input type="radio" name="choice" id="first" value="1" checked="checked" />
+            <label for="first">Mark Attendance</label><br /><br />
+
+            <input type="radio" name="choice" id="second" value="2" />
+            <label for="second">Register Student</label><br /><br />
+
+            <input type="radio" name="choice" id="third" value="3" />
+            <label for="third">Delete Student</label><br /><br />
+            
+            <input type="radio" name="choice" id="fourth" value="4" />
+            <label for="fourth">Students List</label><br /><br />
+
+            <input type="submit" class="btn" value="GO" onclick="go()" />
+        </div>
+    </form>
+
+    <script>
+        function go(){
+            document.getElementsByName("choice").forEach(radio =>{
+                if(radio.checked){
+                    if(radio.value=="1"){
+                        document.getElementById('home').method = "";
+                        document.getElementById('home').action = "{{ url_for("mark_attendance") }}";
+                    }
+                    else if(radio.value=="2"){
+                        document.getElementById('home').action = "{{ url_for("authentication") }}";
+                    }
+                    else if(radio.value=="3"){
+                        document.getElementById('home').action = "{{ url_for("authentication") }}";
+                    }
+                    else if(radio.value=="4"){
+                        document.getElementById('home').action = "{{ url_for("authentication") }}";
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(background.jpg);
+    background-size: cover;
+  }
+  
+  h1{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 35px;
+    border-bottom: 6px solid #4caf50;
+    width: 600px;
+    margin-top: 20px;
+    padding: 13px 0;
+  }
+
+  .attendance-box{
+    width: 600px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    border: blue;
+    border-width: 5px;
+  }

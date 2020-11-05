@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='student_list.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Students List</h1>
+    <div class="list-box" id="list_box"></div>
+
+    <script>
+        (function(){
+            var list = {{lists | safe}};
+            successFunction(list);
+        })();
+
+        function successFunction(list) {
+            var table = '<table>';
+            for (var singleRow = 0; singleRow < list.length; singleRow++) {
+                if (singleRow === 0) {
+                table += '<thead>';
+                table += '<tr>';
+                } else {
+                table += '<tr>';
+                }
+                var rowCells = list[singleRow].split(',');
+                for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+                if (singleRow === 0) {
+                    table += '<th>';
+                    table += rowCells[rowCell];
+                    table += '</th>';
+                } else {
+                    table += '<td>';
+                    table += rowCells[rowCell];
+                    table += '</td>';
+                }
+                }
+                if (singleRow === 0) {
+                table += '</tr>';
+                table += '</thead>';
+                table += '<tbody>';
+                } else {
+                table += '</tr>';
+                }
+            } 
+            table += '</tbody>';
+            table += '</table>';
+            $('#list_box').append(table);
+        }
+    </script>
+</body>
+</html>

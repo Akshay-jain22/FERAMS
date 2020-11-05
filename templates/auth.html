@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='credentials.js') }}"></script>
+  </head>
+  <body>
+    <h1>User Authentication</h1>
+    <form action="" id="userform" class="login-box">
+        <h2>Enter Credentials</h2>
+
+        <div class="textbox">
+        <input type="text" name="Name" id="username" placeholder="Username" required>
+        </div>
+        <div class="textbox">
+        <input type="password" name="Password" id="password" placeholder="Password" autocomplete="off" required>
+        </div>
+
+        <input type="submit" class="btn" value="LOGIN" onclick="login()" />
+    </form>
+
+    <script>
+        function login(){
+          var name = document.getElementById("username").value;
+          var pwd = document.getElementById("password").value;
+  
+          if(name=="" || pwd==""){
+            alert("Incomplete Credentials");
+          }
+          else{
+            var key = {{val}};
+
+            var authkey = JSON.parse(credentials);
+
+            USERNAME = authkey.USERNAME;
+            PASSWORD = authkey.PASSWORD;
+ 
+            if(name == USERNAME && pwd == PASSWORD){
+
+              if(key=="2"){
+                  document.getElementById('userform').action = "{{ url_for("register") }}";
+              }
+
+              else if(key=="3"){
+                  document.getElementById('userform').action = "{{ url_for("delete") }}";
+              }
+
+              else if(key=="4"){
+                  document.getElementById('userform').action = "{{ url_for("student_list") }}";
+              }
+              
+            }
+            else{
+                alert("Invalid Credentials, Try Again!!!");
+                document.getElementById('userform').action = "{{ url_for("authentication") }}";
+            }
+
+          }
+        }
+    </script>
+  </body>
+</html>

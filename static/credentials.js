@@ -1,0 +1,1 @@
+credentials = '{"USERNAME" : "USER_FERAMS", "PASSWORD" : "PASS_FERAMS" }';
