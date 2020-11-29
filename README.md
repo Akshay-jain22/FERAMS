@@ -49,17 +49,20 @@ f) Student List
 1) Proxy using Videos
 
 ## Architecture Diagram
-![](ARCHITECTURE DIAGRAM - FERAMS.png)
+<img src="https://github.com/Akshay-jain22/FERAMS/blob/main/ARCHITECTURE%20DIAGRAM%20-%20FERAMS.png" width="800">
 
 ## Results and Analysis
 - #### Web Application Snapshot
-![](Flask WebApp.png)
+<img src="https://github.com/Akshay-jain22/FERAMS/blob/main/Flask%20WebApp.png" width="800">
+
 - #### Confusion Matrix Analysis
-![](Confusion Matrix - FERAMS.png)
+<img src="https://github.com/Akshay-jain22/FERAMS/blob/main/Confusion%20Matrix%20-%20FERAMS.png" width="300">
+
 - #### F1-Score
-![](Analysis - FERAMS.png)
+<img src="https://github.com/Akshay-jain22/FERAMS/blob/main/Analysis%20-%20FERAMS.png" width="300">
+
 - #### Five-Point Scale Likert Analysis
-![](Likert Analysis.png)
+<img src="https://github.com/Akshay-jain22/FERAMS/blob/main/Likert%20Analysis.png" width="500">
 
 ## References
 - #### [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
