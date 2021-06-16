@@ -7,6 +7,9 @@ FERAMS - Facial Expression Recognition and Attendance Management System
 ## Code
 - #### [FERAMS Master Branch](https://github.com/Akshay-jain22/FERAMS/tree/master)
 
+## Demo
+https://user-images.githubusercontent.com/64270972/122178004-c8df4a80-cea3-11eb-8103-d20385c6f433.mp4
+
 ## Introduction
 We have proposed an automated student attendance management system based on face recognition and facial expression recognition.
 Along with Attendance Management, Our System also provides some other important functionalities:
